@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <v-table
-        :table-data="USERS"
         :show-pagination="true"
         :show-scroll="false"
     >
@@ -10,31 +9,12 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
 import vTable from './components/Table/v-table'
 export default {
   name: 'App',
   components: {
     vTable
   },
-  data: () => {
-    return {
-
-    }
-  },
-  methods: {
-    ...mapActions([
-        'GET_USERS_FROM_API'
-    ])
-  },
-  mounted() {
-    this.GET_USERS_FROM_API()
-  },
-  computed: {
-    ...mapGetters([
-        'USERS'
-    ])
-  }
 }
 </script>
 
